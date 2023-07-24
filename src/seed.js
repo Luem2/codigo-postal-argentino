@@ -12,13 +12,22 @@ import {
     evaluateStreetsList,
 } from './utils/methods.js'
 
+/* 
+    TODO:
+    - Reemplazar el firstP y strongs, buscar el div donde tenga la info especifica del CPA.
+    - Hacer la logica de 5 pages o 10 en STREETS.
+    - Seguir modularizando todo (Mas funciones, carpetas divididas..)
+
+*/
 async function init() {
     await checkOrCreateDataFiles()
 
     const { localitiesWS, streetsWS, heightWS } = createWriteStreams()
     const wStreams = [localitiesWS, streetsWS, heightWS]
 
-    const browser = await chromium.launch()
+    const browser = await chromium.launch({
+        devtools: true,
+    })
     const context = await browser.newContext({
         userAgent: getRandom(),
     })
@@ -61,7 +70,7 @@ async function init() {
                     }))
                 })
 
-                const localities2 = localities.slice(780) // 780 entra a General O'Brien (Buenos Aires)
+                const localities2 = localities.slice(1041) // 1041 entra a La Coloroda (Buenos Aires)
 
                 localitiesBar.start(localities2.length, -1, {
                     seeding: 'Seeding N/A',
