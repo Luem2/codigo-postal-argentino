@@ -1,27 +1,19 @@
 {
     "name": "codigo-postal-argentino",
     "version": "1.0.0",
-    "description": "Challenge CPA",
-    "main": "index.js",
+    "description": "REST API para obtener el CPA (Código Postal Argentino).",
+    "main": "./src/index.js",
     "type": "module",
     "scripts": {
-        "start": "node ./src/index.js",
-        "seed": "node ./src/seed.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node ./src/index.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "cli-progress": "^3.12.0",
-        "uuid": "^9.0.0"
+        "express": ""
     },
     "devDependencies": {
-        "@types/cli-progress": "^3.11.0",
-        "@types/random-useragent": "^0.3.1",
-        "@types/uuid": "^9.0.1",
-        "playwright": "^1.34.3",
-        "random-useragent": "^0.5.0",
         "standard": "^17.1.0"
     },
     "eslintConfig": {
